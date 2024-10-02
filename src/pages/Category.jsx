@@ -10,6 +10,7 @@ function Category() {
     // const [meals, setMeals] = useState([]);
     const {meals, setMeals} = useContext(CategoryContext);
     const navigate = useNavigate();
+    const {search} = useLocation();
 
 
     useEffect(() => {
@@ -18,6 +19,10 @@ function Category() {
         });
         // eslint-disable-next-line
     }, [name]);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [search]);
 
     return (
         <>
