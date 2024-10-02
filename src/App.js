@@ -8,17 +8,22 @@ import {About} from './pages/About';
 import {NotFound} from './pages/NotFound';
 import {Category} from './pages/Category';
 import {Recipe} from "./pages/Recipe";
+import {CategoryContextProvider} from "./context/CategoryContext";
 
 function App() {
     return (
         <>
             <Header/>
             <main className='container content'>
-                <Routes >
+                <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/about' element={<About/>}/>
                     <Route path='/contact' element={<Contact/>}/>
-                    <Route path='/category/:name' element={<Category/>}/>
+                    <Route path='/category/:name' element={
+                        <CategoryContextProvider>
+                            <Category/>
+                        </CategoryContextProvider>
+                    }/>
                     <Route path='/meal/:id' element={<Recipe/>}/>
                     <Route path='*' element={<NotFound/>}/>
                 </Routes>

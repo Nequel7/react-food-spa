@@ -52,3 +52,12 @@ iframe{
     width: 600px;
     height: 350px;
 }
+
+.pagination{
+    display: flex;
+    justify-content: center;
+
+}
+.pagination  li.active {
+    background-color: #311b92;
+}
